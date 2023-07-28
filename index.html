@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Refund Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    
+    <div class="header">
+        <h1>TAX REFUND FORM</h1>
+        <button class="setbutton" onclick="openSettings();"><span class="material-symbols-outlined">
+            settings
+            </span></button>
+    </div>
+    
+    
+    <div class="settings" id="settingsid">
+        <form class="settings-form">
+            <div>
+                <h3>SET TAX RATE</h3>
+            </div>
+            <div>
+                <label for="healthtax">HEALTH:</label>
+                <input type="number" id="healthtax" name="healthtax" placeholder="10">%<br>
+            </div>
+            <div>
+                <label for="foodtax">FOOD:</label>
+                <input type="number" id="foodtax" name="foodtax" placeholder="1">%<br>
+            </div>
+            <div>
+                <label for="clothingtax">CLOTHING:</label>
+                <input type="number" id="clothingtax" name="clothingtax" placeholder="10">%<br>
+            </div>
+            <div>
+                <label for="renttax">RENT:</label>
+                <input type="number" id="renttax" name="renttax" placeholder="20">%<br>
+            </div>
+            <div>
+                <button type="button" onclick="closeSettings()" class="button-close">CLOSE</button>
+                <button type="button" onclick="saveSettings()" class="button-save">SAVE</button>
+            </div>
+            </form>
+    </div>  
+    
+    
+    <div class="form-container">
+        <div class="form-row">
+          <div class="date-container">
+            <label for="date">DATE</label><br>
+            <input type="date" id="date" name="date" class="date" required>
+          </div>
+          <div class="number-container">
+            <label for="number">NUMBER</label><br>
+            <input type="number" id="number" name="number" class="number" required>
+          </div>
+          <div class="who-container">
+            <label for="who">RETRIEVED FROM</label><br>
+            <input type="text" id="who" name="who" class="who" required>
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="type-container">
+            <label for="type">TYPE</label><br>
+            <select name="type" id="type" class="type" required>
+              <option value="">Choose...</option>
+              <option value="Health">Health</option>
+              <option value="Food">Food</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Rent">Rent</option>
+            </select>
+          </div>
+          <div class="amount">
+            <label for="price">PRICE</label><br>
+            <input type="number" id="price" name="price" class="price" required>
+          </div>
+        </div>
+        <button type="submit" onclick="append()">ADD</button>
+      </div>
+    
+    
+    <div class="data">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>DATE</th>
+                    <th>NUMBER</th>
+                    <th>RETRIEVED FROM</th>
+                    <th>TYPE</th>
+                    <th>PRICE</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody id="datatable"></tbody>
+            
+        </table>
+    </div>
+    
+    <div class="detail-container">
+        <div class="detail">
+            <table class="table-total">
+                <tr>
+                    <th class="none"></th><th class="detail-head-mid">AMOUNT</th><th class="detail-head-right">TOTAL PRICE</th>
+                </tr>
+                <tr>
+                    <td class="detail-left">GENERAL TOTAL</td><td class="detail-mid"><input type="text" id="countertotal" readonly></td><td class="detail-right"><input type="text" id="pricetotal" readonly></td>
+                </tr>
+                <tr>
+                    <td class="detail-left">HEALTH</td><td class="detail-mid"><input type="text" id="counterhealth" readonly></td><td class="detail-right"><input type="text" id="healthtotal" readonly></td>
+                </tr>
+                <tr>
+                    <td class="detail-left">FOOD</td><td class="detail-mid"><input type="text" id="counterfood" readonly></td><td class="detail-right"><input type="text" id="foodtotal" readonly></td>
+                </tr>
+                <tr>
+                    <td class="detail-left">CLOTHING</td><td class="detail-mid"><input type="text" id="counterclothing" readonly></td><td class="detail-right"><input type="text" id="clothingtotal" readonly></td>
+                </tr>
+                <tr>
+                    <td class="detail-left">RENT</td><td class="detail-mid"><input type="text" id="counterrent" readonly></td><td class="detail-right"><input type="text" id="renttotal" readonly></td>
+                </tr>
+                
+            </table>
+        </div>
+        <div class="detail-refund">
+                    <label for="refund">TOTAL TAX<br><span>TO REFUND</span></label><br>
+                    <input type="text" id="refund" readonly>
+        </div>
+    </div>
+</body>
+</html>
